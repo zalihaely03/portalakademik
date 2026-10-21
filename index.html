@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Layanan Akademik – Universitas Pattimura</title>
+  <meta name="description" content="Ajukan surat aktif kuliah, transkrip sementara, legalisir, dan cuti akademik secara daring melalui Portal Layanan Akademik Universitas Pattimura.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Lompat ke konten utama</a>
+
+  <!-- ===== HEADER & NAVIGASI ===== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand-group" href="#beranda">
+        <!-- Logo dekoratif: nama institusi sudah ada sebagai teks di sampingnya, jadi alt dikosongkan. -->
+        <img src="img/logo.png" alt="" class="brand-logo" width="42" height="40">
+        <span class="brand-text">
+          <span class="brand-title">PORTAL AKADEMIK</span>
+          <span class="brand-subtitle">UNIVERSITAS PATTIMURA</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#permohonan">Permohonan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== KONTEN UTAMA ===== -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- Hero: foto latar dimuat lewat <img> di HTML (seperti logo), bukan lewat CSS -->
+    <section id="beranda" class="hero-section" aria-labelledby="judul-hero">
+      <!-- Foto gedung dekoratif (suasana saja), sehingga alt dikosongkan -->
+      <img class="hero-bg" src="img/hero-gedung.jpg" alt="" width="1280" height="960" fetchpriority="high">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 id="judul-hero">Selamat Datang di<br>Portal Layanan Akademik</h1>
+        <p class="hero-campus-sub">Universitas Pattimura</p>
+      </div>
+    </section>
+
+    <!-- Kartu layanan -->
+    <section id="layanan" class="section-block" aria-labelledby="judul-layanan">
+      <div class="container">
+        <div class="section-header-title">
+          <h2 id="judul-layanan">Layanan Akademik Pilihan</h2>
+          <p>Pilih layanan administrasi kemahasiswaan yang Anda butuhkan dengan cepat dan mudah.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon-wrapper" aria-hidden="true">📄</div>
+            <h3>Surat Aktif Kuliah</h3>
+            <p>Permohonan surat keterangan resmi status aktif mahasiswa untuk keperluan beasiswa, asuransi, atau instansi terkait.</p>
+            <a href="#permohonan" class="btn-card">Ajukan Surat Aktif Kuliah</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon-wrapper" aria-hidden="true">📊</div>
+            <h3>Transkrip Sementara</h3>
+            <p>Pencetakan transkrip nilai akademik kumulatif sementara yang telah tervalidasi oleh program studi.</p>
+            <a href="#permohonan" class="btn-card">Ajukan Transkrip Sementara</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon-wrapper" aria-hidden="true">🏛️</div>
+            <h3>Permohonan Legalisir</h3>
+            <p>Layanan pengajuan legalisir dokumen ijazah, transkrip nilai, atau sertifikat pendukung lainnya secara online.</p>
+            <a href="#permohonan" class="btn-card">Ajukan Legalisir</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon-wrapper" aria-hidden="true">📅</div>
+            <h3>Cuti Akademik</h3>
+            <p>Pengajuan permohonan penundaan kegiatan perkuliahan sementara untuk semester berjalan sesuai ketentuan akademik.</p>
+            <a href="#permohonan" class="btn-card">Ajukan Cuti Akademik</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form permohonan -->
+    <section id="permohonan" class="section-block" aria-labelledby="judul-form">
+      <div class="container">
+        <div class="form-card-container">
+          <h2 id="judul-form">Form Permohonan Layanan Akademik</h2>
+          <p class="form-desc">Lengkapi data diri dan detail keperluan permohonan Anda pada form di bawah ini. Kolom bertanda <span class="required-asterisk" aria-hidden="true">*</span><span class="visually-hidden">bintang</span> wajib diisi.</p>
+
+          <!-- Muncul setelah form dikirim (CSS :target, tanpa JavaScript) -->
+          <div id="status" class="notice" role="status" tabindex="-1">
+            <h3>Permohonan diterima</h3>
+            <p>Terima kasih. Pada penggunaan sebenarnya, nomor tiket akan dikirim ke email Anda. Halaman ini adalah prototipe tanpa server.</p>
+          </div>
+
+          <form action="#status" method="get" class="academic-form">
+
+            <div class="form-group">
+              <label for="nama_lengkap">Nama Lengkap <span class="required-asterisk" aria-hidden="true">*</span></label>
+              <input type="text" id="nama_lengkap" name="nama_lengkap"
+                     required minlength="3" autocomplete="name"
+                     placeholder="Masukkan nama lengkap Anda sesuai KTM">
+            </div>
+
+            <div class="form-group">
+              <label for="email_student">Email <span class="required-asterisk" aria-hidden="true">*</span></label>
+              <input type="email" id="email_student" name="email_student"
+                     required autocomplete="email"
+                     placeholder="contoh: nama@student.ac.id">
+            </div>
+
+            <div class="form-group">
+              <label for="jenis_layanan">Jenis Layanan <span class="required-asterisk" aria-hidden="true">*</span></label>
+              <select id="jenis_layanan" name="jenis_layanan" required>
+                <option value="">-- Pilih Jenis Layanan --</option>
+                <option value="surat_aktif">Surat Aktif Kuliah</option>
+                <option value="transkrip">Transkrip Sementara</option>
+                <option value="legalisir">Permohonan Legalisir</option>
+                <option value="cuti">Cuti Akademik</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="keperluan">Keperluan Permohonan <span class="required-asterisk" aria-hidden="true">*</span></label>
+              <textarea id="keperluan" name="keperluan" rows="4"
+                        required minlength="10" maxlength="500"
+                        aria-describedby="keperluan-hint"
+                        placeholder="Jelaskan secara singkat alasan dan peruntukan dokumen..."></textarea>
+              <p class="form-hint" id="keperluan-hint">10 sampai 500 karakter.</p>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="setuju" name="setuju" required>
+              <label for="setuju">Saya menyatakan data di atas benar. <span class="required-asterisk" aria-hidden="true">*</span></label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-submit">Kirim Permohonan</button>
+              <button type="reset" class="btn-reset">Kosongkan Formulir</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Universitas Pattimura. Hak Cipta Dilindungi.</p>
+      <p class="footer-sub">Portal Layanan Akademik Responsif &amp; Aksesibel</p>
+    </div>
+  </footer>
+
+</body>
+</html>
